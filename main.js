@@ -1,5 +1,3 @@
-console.log("JS Funzionante")
-
 // Input:
 // Recupero: numero di chilometri ed età del passeggero
 const age = parseInt(prompt("Inserisci l'età del viaggiatore"));
@@ -33,6 +31,9 @@ if (age < 18) {
     console.log("Tariffa di base");
 }
 
+datoStampatile = costoBigliettoFinale.toFixed(2);
+
 //Output:
-// Stampo il costo finale del biglietto arrotondato
+// Stampo il costo finale del biglietto arrotondato sia in alert che in pagina HTML
+document.getElementById("biglietto").innerHTML = `Il costo del biglietto è di ${datoStampatile} €`;
 alert(`Il costo del biglietto è di ${costoBigliettoFinale.toFixed(2)} €`);
