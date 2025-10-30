@@ -13,23 +13,26 @@ console.log("Input distance: ", distance);
 const costoBigliettoBase = distance * costoKM;
 console.log("Costo del biglietto: ", costoBigliettoBase);
 
-// Applico eventuali sconti
 let costoBigliettoFinale = null;
 
 // Verifico se l'utente è in una fascia d'età con scontistica
-if ( age < 18 ) {
+// Eventualmente applico lo sconto (cioè ricalcolo il totale)
+if (age < 18) {
+
     costoBigliettoFinale = costoBigliettoBase * 0.80;
     console.log("Applicare scontistica Junior");
-} else if ( age > 65 ) {
+
+} else if (age > 65) {
+
     costoBigliettoFinale = costoBigliettoBase * 0.60;
     console.log("Applicare scontistica Senior");
+
 } else {
+
     costoBigliettoFinale = costoBigliettoBase;
     console.log("Tariffa di base");
 }
-// Eventualmente applico lo sconto (cioè ricalcolo il totale)
-
-
 
 //Output:
-alert(`Il costo del biglietto è di ${costoBigliettoFinale} €`);
+// Stampo il costo finale del biglietto arrotondato
+alert(`Il costo del biglietto è di ${costoBigliettoFinale.toFixed(2)} €`);
